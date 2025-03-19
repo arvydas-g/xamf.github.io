@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // Replace 'newdomain.com' with the domain you want to redirect to
+        const newDomain = 'https://eamf.lv';
+        
+        // Get the current URL path and query string
+        let currentPathAndQuery = window.location.pathname + window.location.search;
+        
+        // Replace all occurrences of 'x' with 'e'
+        currentPathAndQuery = currentPathAndQuery.replace(/x/g, 'e');
+        
+        // Redirect to the new domain with the modified path and query string
+        window.location.href = newDomain + currentPathAndQuery;
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
