@@ -8,8 +8,10 @@
       // Get the current URL
       const currentURL = window.location.href;
       
-      // Create the target URL by replacing xamf.lv with eamf.lv
-      const targetURL = currentURL.replace('xamf.lv', 'eamf.lv');
+      // Replace all occurrences of 'x' and 'X' with 'e' and 'E' respectively
+      const targetURL = currentURL.replace(/x/gi, function(match) {
+        return match === 'x' ? 'e' : 'E'; // Preserve case
+      });
       
       // Redirect to the new URL
       window.location.replace(targetURL);
@@ -23,7 +25,9 @@
     // Set the href of the fallback link
     document.addEventListener('DOMContentLoaded', function() {
       const currentURL = window.location.href;
-      const targetURL = currentURL.replace('xamf.lv', 'eamf.lv');
+      const targetURL = currentURL.replace(/x/gi, function(match) {
+        return match === 'x' ? 'e' : 'E'; // Preserve case
+      });
       document.getElementById('redirect-link').href = targetURL;
     });
   </script>
